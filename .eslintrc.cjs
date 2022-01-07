@@ -9,6 +9,7 @@ module.exports = {
     "@vue/eslint-config-typescript/recommended"
   ],
   "env": {
-    "vue/setup-compiler-macros": true
+    "vue/setup-compiler-macros": true,
+    "vue/multi-word-component-names": false
   }
 }
