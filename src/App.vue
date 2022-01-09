@@ -1,10 +1,11 @@
 <template>
   <div>
+    <TopBar></TopBar>
     <TheHeader></TheHeader>
-    <main class="wrapper">
+    <main class="container">
       <router-view v-slot="{ Component }">
         <transition name="scale">
-          <component :is="Component" />
+          <component class="wrapper" :is="Component" />
         </transition>
       </router-view>
     </main>
@@ -14,11 +15,13 @@
 <script lang="ts">
 import HelloWorld from "@/components/HelloWorld.vue";
 import TheHeader from "@/components/common/TheHeader.vue";
+import TopBar from "@/components/common/TopBar.vue";
 
 export default {
   components: {
     HelloWorld,
     TheHeader,
+    TopBar
   },
   setup() {
   },
@@ -26,7 +29,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/base.css";
+@import "@/assets/scss/base.scss";
 .wrapper {
   width: 100%;
   min-height: 100vh;
@@ -36,7 +39,6 @@ export default {
 .scale-leave-active {
   transition: all 0.5s ease;
 }
-
 
 .scale-enter-from,
 .scale-leave-to {

@@ -1,0 +1,28 @@
+.top-nav {
+  .top-nav-item {
+    font-size: .6rem;
+    position: relative;
+    margin-right: .5rem;
+
+    a {
+      color: $gray-700;
+    }
+    
+    &:hover {
+      a {
+        color: $red;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 1rem;
+      width: 1px;
+      top: .5rem;
+      right: 0;
+      background-color: $light;
+    }
+    
+  }
+}

@@ -4,3 +4,8 @@ export interface navItem {
     icon: string,
     active: boolean
 }
+
+export interface navItemChild {
+    name: string,
+    to: string,
+}
