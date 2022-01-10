@@ -1,5 +1,5 @@
 <template>
-  <div> newss herrrrre</div>
+  <div> video herrrrre</div>
 </template>
 
 <script>

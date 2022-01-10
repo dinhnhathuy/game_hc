@@ -13,13 +13,11 @@
 </template>
 
 <script lang="ts">
-import HelloWorld from "@/components/HelloWorld.vue";
 import TheHeader from "@/components/common/TheHeader.vue";
 import TopBar from "@/components/common/TopBar.vue";
 
 export default {
   components: {
-    HelloWorld,
     TheHeader,
     TopBar
   },

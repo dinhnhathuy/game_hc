@@ -20,9 +20,11 @@
             <RouterLink v-else :to="item.to" class="nav-link active" aria-current="page" href="#">{{ item.name }}</RouterLink>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="d-flex icons">
+          <img src="/images/icon/search.svg" alt="search-icon">
+          <img src="/images/icon/user.svg" alt="user-icon">
+          <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+          <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
         </form>
       </div>
     </div>
@@ -30,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { reactive } from 'vue'
 import { navItem, navItemChild } from "../types/index";  
 
 const navItems = reactive([{
@@ -69,22 +71,22 @@ const categories = reactive([{
   icon: "videos",
 },
 {
-  name: "reviews",
-  to: "/reviews",
-  icon: "reviews",
+  name: "Previews",
+  to: "/previews",
+  icon: "previews",
 },
 {
-  name: "gears",
+  name: "Gears",
   to: "/gears", 
   icon: "gears",
 },
 {
-  name: "deals",
+  name: "Deals",
   to: "/deals",
   icon: "deals",
 },
 {
-  name: "games",
+  name: "Games",
   to: "/games",
   icon: "games",
   child: [{
@@ -112,6 +114,20 @@ const categories = reactive([{
 
 <style lang="scss" scoped>
 .router-link-exact-active {
-  font-weight: 800;
+  font-weight: 600;
+  color: #f5365c !important;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #f5365c;
+  }
+}
+.icons img {
+  margin: auto 1rem;
 }
 </style>

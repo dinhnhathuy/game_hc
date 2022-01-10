@@ -1,5 +1,5 @@
 <template>
-  <div> newss herrrrre</div>
+  <div> deal herrrrre</div>
 </template>
 
 <script>
