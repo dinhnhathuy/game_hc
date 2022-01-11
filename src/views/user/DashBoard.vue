@@ -1,10 +1,13 @@
 <template>
-  <div>dashboard</div>
+  <div>
+    <TableDashboard></TableDashboard>
+  </div>
 </template>
 
 <script>
+import TableDashboard from '../../components/dashboard/TableDashboard.vue'
 export default {
-
+  components: {TableDashboard}
 }
 </script>
 
