@@ -1,0 +1,30 @@
+.main-content-tab {
+    border-bottom: 1px solid #e6e6e6;
+    border-top: 1px solid #e6e6e6;
+
+    .nav-link {
+        padding: 1rem 1.5rem;
+        color: $gray-900;
+        cursor: pointer;
+
+        &:hover {
+            color: $red;
+        }
+
+        &.active {
+            font-weight: $font-semibold;
+            color: $red;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 3px;
+                background: $red;
+                bottom: -2px;
+                left: 0;
+            }
+        }
+    }
+}

@@ -1,5 +1,7 @@
-import firebase from 'firebase/app'
-import 'firebase/firestore'
+import { initializeApp } from 'firebase/app';
+import { getFirestore, serverTimestamp } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import { getStorage } from 'firebase/storage';
 
 const config = {
     apiKey: process.env.FIREBASE_APIKEY,
@@ -11,6 +13,9 @@ const config = {
     appId: process.env.FIREBASE_APIKEY,
 }
 
-firebase.initializeApp(config);
+const firebaseApp = initializeApp(config);
 
-export default firebase
+export const db = getFirestore(firebaseApp);
+export const store = getStorage(firebaseApp);
+export const auth = getAuth(firebaseApp);
+export const timestamp = serverTimestamp();

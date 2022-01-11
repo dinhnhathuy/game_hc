@@ -22,7 +22,7 @@
         </ul>
         <form class="d-flex icons">
           <img src="/images/icon/search.svg" alt="search-icon">
-          <img src="/images/icon/user.svg" alt="user-icon">
+          <img src="/images/icon/user.svg" alt="user-icon" @click="openModal()">
           <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
           <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
         </form>
@@ -32,8 +32,11 @@
 </template>
 
 <script setup lang="ts">
+import { userAdmin } from "../../stores/modules/user";
 import { reactive } from 'vue'
 import { navItem, navItemChild } from "../types/index";  
+
+const user = userAdmin()
 
 const navItems = reactive([{
   name: "Home",
@@ -109,6 +112,10 @@ const categories = reactive([{
     to: "/games/switch",
   }]
 }])
+
+const openModal = () => {
+  user.openModal()
+}
 
 </script>
 
