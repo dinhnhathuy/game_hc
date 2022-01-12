@@ -3,8 +3,8 @@
     <h1>Library Data</h1>
     <button>+ Add new entry</button>
   </div>
-  <div class=" main-table">
-    <table class="table table-bordered">
+  <div class="main-table">
+    <table class="table ">
       <thead class="main-thead">
         <tr>
           <th :style="`width: ${tableSize.firstCol}`" scope="col">ID</th>
@@ -30,7 +30,7 @@
           <td>{{ variable.description }}</td>
           <td>{{ variable.author }}</td>
           <td>{{ variable.date }}</td>
-          <td>
+          <td class="icon">
             <i class="fa fa-pencil"></i>
             <i class="fa fa-trash"></i>
           </td>
@@ -49,10 +49,10 @@ export default {
         secondCol: "10%",
         thirdCol: "20%",
         forthCol: "15%",
-        fifthCol: "34%",
+        fifthCol: "32%",
         sixthCol: "10%",
         seventhCol: "4%",
-        eighthCol: "5%",
+        eighthCol: "7%",
       },
       variables: [
         {
@@ -87,6 +87,7 @@ export default {
 .table-top-page {
   display:flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
 .table-top-page button {
   border-radius: 10px;
@@ -98,11 +99,31 @@ export default {
 }
 .main-table{
   background-color: white;
+  margin-top: 20px;
+  
+}
+.main-table .table {
+  border: 1px initial rgba(128, 128, 128, 0.26);
+  
 }
 .table .main-thead {
   text-transform: uppercase;
 }
+.main-thead .fa-cog{
+  border: 1px solid rgba(128, 128, 128, 0.486);
+  font-size: 15px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+
+}
 .main-tbody img {
   width: 100%;
+}
+.main-tbody .icon {
+  letter-spacing: 10px;
+  
 }
 </style>

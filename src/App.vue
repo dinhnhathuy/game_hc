@@ -2,7 +2,7 @@
   <div>
     <TopBar></TopBar>
     <TheHeader></TheHeader>
-    <main class="container">
+    <main >
       <router-view v-slot="{ Component }">
         <transition name="scale">
           <component class="wrapper" :is="Component" />

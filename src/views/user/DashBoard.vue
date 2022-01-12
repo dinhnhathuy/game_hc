@@ -3,7 +3,7 @@
   <div>
       <DefaultDashboard></DefaultDashboard>
     </div>
-    <div>
+    <div class="contentDashboard">
       <TableDashboard></TableDashboard>
     </div>
 </div>
@@ -20,7 +20,10 @@ export default {
 
 <style>
   .Dashboard {
-    background-color: rgba(213, 248, 246, 0.315);
-    display: flex;
+    background-color: rgb(248 249 250);
+    display: flex; 
+  }
+  .Dashboard .contentDashboard {
+    margin: 0 20px;
   }
 </style>
