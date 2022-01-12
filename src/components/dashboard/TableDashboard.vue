@@ -1,5 +1,9 @@
 <template>
-  <div class="container">
+  <div class="table-top-page">
+    <h1>Library Data</h1>
+    <button>+ Add new entry</button>
+  </div>
+  <div class=" main-table">
     <table class="table table-bordered">
       <thead class="main-thead">
         <tr>
@@ -12,6 +16,9 @@
           </th>
           <th :style="`width: ${tableSize.sixthCol}`" scope="col">Author</th>
           <th :style="`width: ${tableSize.seventhCol}`" scope="col">Date</th>
+          <th :style="`width: ${tableSize.eighthCol}`" scope="col">
+            <i class="fa fa-cog"></i>
+          </th>
         </tr>
       </thead>
       <tbody class="main-tbody">
@@ -23,6 +30,10 @@
           <td>{{ variable.description }}</td>
           <td>{{ variable.author }}</td>
           <td>{{ variable.date }}</td>
+          <td>
+            <i class="fa fa-pencil"></i>
+            <i class="fa fa-trash"></i>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -38,9 +49,10 @@ export default {
         secondCol: "10%",
         thirdCol: "20%",
         forthCol: "15%",
-        fifthCol: "39%",
+        fifthCol: "34%",
         sixthCol: "10%",
         seventhCol: "4%",
+        eighthCol: "5%",
       },
       variables: [
         {
@@ -71,7 +83,22 @@ export default {
 };
 </script>
 
-<style>
+<style scope>
+.table-top-page {
+  display:flex;
+  justify-content: space-between;
+}
+.table-top-page button {
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: rgb(53, 53, 230);
+  color: white;
+  height: 45px;
+  width: 200px;
+}
+.main-table{
+  background-color: white;
+}
 .table .main-thead {
   text-transform: uppercase;
 }
