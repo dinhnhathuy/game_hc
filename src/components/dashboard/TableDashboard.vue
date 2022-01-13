@@ -123,7 +123,8 @@ export default {
   width: 100%;
 }
 .main-tbody .icon {
-  letter-spacing: 10px;
-  
+  letter-spacing: 20px;
+  font-size: 15px;
+  color: rgba(128, 128, 128, 0.829);
 }
 </style>
