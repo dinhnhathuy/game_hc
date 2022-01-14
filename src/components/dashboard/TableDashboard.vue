@@ -1,7 +1,7 @@
 <template>
   <div class="table-top-page">
     <h1>Library Data</h1>
-    <button>+ Add new entry</button>
+    <button @click="onNewEntry" >+ Add new entry</button>
   </div>
   <div class="main-table">
     <table class="table ">
@@ -79,6 +79,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    onNewEntry(){
+      this.$emit("createEntry")
+    }
   },
 };
 </script>

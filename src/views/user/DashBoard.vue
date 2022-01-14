@@ -4,7 +4,12 @@
       <DefaultDashboard></DefaultDashboard>
     </div>
     <div class="contentDashboard">
-      <TableDashboard></TableDashboard>
+      <component :is="currentComponent"
+      @createEntry="showEntry"
+      ></component>
+
+      <!-- <TableDashboard @createEntry="showEntry"></TableDashboard>
+       -->
     </div>
 </div>
  
@@ -13,9 +18,22 @@
 <script>
 import DefaultDashboard from '@/components/layout/defaultDashboard.vue'
 import TableDashboard from '../../components/dashboard/TableDashboard.vue'
+import CreateEntry from '../../components/dashboard/CreateEntry.vue'
 export default {
-  components: {TableDashboard, DefaultDashboard}
-}
+  components: {TableDashboard, DefaultDashboard, CreateEntry},
+  data() {
+  return {
+    currentComponent:'TableDashboard',
+   };
+  },
+  methods: {
+    showEntry(){
+      this.currentComponent='CreateEntry'
+    }
+  },
+};
+
+
 </script>
 
 <style>
