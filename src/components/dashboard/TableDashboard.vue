@@ -27,7 +27,7 @@
           <td><img :src="variable.picture" alt="" /></td>
           <td>{{ variable.title }}</td>
           <td>{{ variable.slug }}</td>
-          <td>{{ variable.description }}</td>
+          <td class="anText">{{ variable.description }}</td>
           <td>{{ variable.author }}</td>
           <td>{{ variable.date }}</td>
           <td class="icon">
@@ -131,5 +131,8 @@ export default {
   letter-spacing: 20px;
   font-size: 15px;
   color: rgba(128, 128, 128, 0.829);
+}
+.main-tbody .anText{
+  
 }
 </style>

@@ -6,6 +6,7 @@
     <div class="contentDashboard">
       <component :is="currentComponent"
       @createEntry="showEntry"
+      @cancelEntry ="offEntry"
       ></component>
 
       <!-- <TableDashboard @createEntry="showEntry"></TableDashboard>
@@ -28,8 +29,15 @@ export default {
   },
   methods: {
     showEntry(){
+      
       this.currentComponent='CreateEntry'
-    }
+      console.log(this);
+    },
+    offEntry(){
+      
+      this.currentComponent = "TableDashboard"
+      console.log(this);
+    },
   },
 };
 

@@ -1,5 +1,5 @@
 <template>
-  <span> <i class="fa fa-arrow-left"> BACK </i> </span>
+  <span @click="cancelCreate"> <i class="fa fa-arrow-left"> BACK </i> </span>
   <h2>Create an Entry</h2>
   <form>
     <div class="information">
@@ -32,13 +32,23 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    cancelCreate (){
+     this.$emit("cancelEntry")
+    }
+  },
+};
 </script>
 
 <style scoped>
+span {
+  color: blue;
+  font-size: 15px;
+  cursor: pointer;
+}
 form {
-  background-color: white;
-  
+  background-color: white; 
 }
 .information label {
   display: block;
@@ -49,6 +59,12 @@ form {
 }
 .info-body .box-info{
     margin-left: 50px;
+}
+.info-body .box-info input{
+  border: 0.5px solid #bec7c8;
+}
+.info-body .box-info textarea{
+  border: 0.5px solid #bec7c8;
 }
 .information { 
   width: 1500px;
@@ -65,5 +81,6 @@ input[type="submit"] {
 .information .descriptionBox {
   width: 500px;
 }
+
 </style>
 >
