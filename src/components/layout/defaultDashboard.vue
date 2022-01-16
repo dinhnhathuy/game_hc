@@ -44,7 +44,6 @@ export default {
 <style>
   .layout-dashboard{
     display: flex;
-    width: 310px;
     height: 100%;
     font-family: Segoe UI;
     border-right: 1px solid #bec7c8;
