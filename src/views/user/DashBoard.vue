@@ -1,9 +1,9 @@
 <template>
   <div class="Dashboard row">
-    <div class="col-3">
+    <div class="col-2">
       <DefaultDashboard></DefaultDashboard>
     </div>
-    <div class="contentDashboard col-9">
+    <div class="contentDashboard col-10">
       <component :is="currentComponent" @createEntry="showEntry" @cancelEntry="offEntry"></component>
 
       <!-- <TableDashboard @createEntry="showEntry"></TableDashboard>

@@ -103,6 +103,7 @@ export default {
   width: 200px;
 }
 .main-table{
+  border-radius: 20px;
   background-color: white;
   margin-top: 20px;
   
