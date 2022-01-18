@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg top-nav px-5">
+  <nav class="navbar navbar-top navbar-expand top-nav lg-px-5">
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li
         v-for="(item, index) in navItems"
@@ -51,3 +51,17 @@ const navItems = reactive([
 ]) as Array<navItem>
 
 </script>
+
+<style lang="scss">
+.navbar-top {
+    margin: 0 auto 0.5rem;
+    overflow-x: auto;
+    width: 90%;
+    max-width: 1408px;
+    overflow-x: auto;
+    display: block !important;
+    .navbar-nav {
+      width: 700px !important;
+    }
+}
+</style>

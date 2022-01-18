@@ -21,8 +21,9 @@
           </li>
         </ul>
         <form class="d-flex icons">
-          <img src="/images/icon/search.svg" alt="search-icon">
-          <img src="/images/icon/user.svg" alt="user-icon" @click="openModal()">
+          <img src="/images/icon/switch-language.svg" class="language-icon">
+          <img src="/images/icon/search.svg" class="search-icon">
+          <img src="/images/icon/user.svg" class="user-icon" @click="openModal()">
           <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
           <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
         </form>
@@ -34,7 +35,7 @@
 <script setup lang="ts">
 import { userAdmin } from "../../stores/modules/user";
 import { reactive } from 'vue'
-import { navItem, navItemChild } from "../types/index";  
+import { navItem } from "../types/index";
 
 const user = userAdmin()
 
@@ -136,5 +137,8 @@ const openModal = () => {
 }
 .icons img {
   margin: auto 1rem;
+}
+.language-icon {
+  width: 24px;
 }
 </style>

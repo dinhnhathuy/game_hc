@@ -21,14 +21,17 @@
 <style lang="scss" scoped>
 .high-light-card {
     .fit-img-wrapper {
-        padding-top: 420px;
+        padding-top: 60%;
+        @media screen and (min-width: 1024px) {
+            padding-top: 420px !important;
+        }
     }
 
     .card-img-overlay {
         bottom: -100px !important;
         height: 150px;
         top: unset !important;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
     }
 
     .card-text {

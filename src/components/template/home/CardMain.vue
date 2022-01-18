@@ -1,6 +1,6 @@
 <template>
     <div class="card card-main">
-        <div class="row g-0 p-4">
+        <div class="row card-main__wrapper g-0 p-4">
             <div class="col-md-8">
                 <div class="card-body">
                     <h6 class="card-text card-main__label">Card title</h6>
@@ -32,6 +32,11 @@
     @import "@/assets/scss/custom/variables";
 
     .card-main {
+        .card-main__wrapper {
+            @media screen and (max-width: 1024px) {
+                flex-direction: column-reverse;
+            }
+        }
         border-radius: 0;
         border: none;
         border-bottom: 1px solid $gray-400;
@@ -48,7 +53,10 @@
         }
 
         .fit-img-wrapper {
-            padding-top: 20%;
+            @media screen and (min-width: 1024px) {
+                padding-top: 20%;
+            }
+            padding-top: 50%;
 
             img {
                 border-radius: 1px !important;

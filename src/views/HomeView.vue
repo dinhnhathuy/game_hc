@@ -1,11 +1,10 @@
 <template>
   <main class="container">
-    <h1>this is home page</h1>
     <div class="row">
-      <div class="col-6 col-md-8 col-lg-8">
+      <div class="col-12 col-lg-8 py-3">
         <CardHighLight></CardHighLight>
       </div>
-      <div class="col-6 col-md-4 col-lg-4">
+      <div class="col-12 col-lg-4 py-3">
         <CardHighLight></CardHighLight>
       </div>
     </div>
@@ -85,12 +84,10 @@
         </div>
       </div>
     </section>
-    <pinaLogo></pinaLogo>
   </main>
 </template>
 
 <script setup lang="ts">
-  import pinaLogo from '../components/pinaLogo.vue'
   import CardHighLight from '../components/template/home/CardHighLight.vue'
   import CardTop from '../components/template/home/CardTop.vue'
   import CardMain from '../components/template/home/CardMain.vue'
