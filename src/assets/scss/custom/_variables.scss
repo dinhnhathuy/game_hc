@@ -1,5 +1,7 @@
 // Color system
 
+$main-color: #f5365c !default;
+
 $white:    #fff !default;
 $gray-100: #fbfbfb !default;
 $gray-200: #e9ecef !default;
@@ -165,5 +167,8 @@ $shapes-dark-colors: map-merge((
 // container
 
 // font weight
-$font-bold:         800;
-$font-semibold:     700;
+$font-light:        300;
+$font-regular:      400;
+$font-semibold:     600;
+$font-bold:         700;
+$font-black:        900;
