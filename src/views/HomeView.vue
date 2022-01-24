@@ -22,6 +22,9 @@
           <div v-for="(item, index) in 8" :key="index">
             <CardMain></CardMain>
           </div>
+          <div class="d-flex justify-content-center load-more">
+            <button class="btn btn-primary mt-3"><span></span> Load more</button>
+          </div>
         </div>
         <div class="col-12 col-md-4 col-lg-4">
           <div class="list">

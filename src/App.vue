@@ -8,22 +8,15 @@
           <component class="wrapper" :is="Component" />
         </transition>
       </router-view>
+    <TheFooter></TheFooter>
     </main>
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import TheHeader from "@/components/common/TheHeader.vue";
 import TopBar from "@/components/common/TopBar.vue";
-
-export default {
-  components: {
-    TheHeader,
-    TopBar
-  },
-  setup() {
-  },
-};
+import TheFooter from "./components/common/TheFooter.vue";
 </script>
 
 <style lang="scss">

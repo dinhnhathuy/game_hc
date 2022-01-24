@@ -12,18 +12,24 @@
             </div>
         </div>
         <div class="card-body">
-            <h5 class="card-title line-clamp-3">
-                Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-            </h5>
+            <router-link :to="{name: 'article', params: {id: 123}}">
+                <h5 class="card-title line-clamp-3">
+                    Some quick example text to build on the card title and make up the bulk of the card's
+                    content.
+                </h5>
+            </router-link>
         </div>
     </div>
 </template>
 
-<script></script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/custom/variables";
+@import "@/assets/scss/variables";
+a {
+    color: $gray-900;
+    text-decoration: none;
+}
 .top-card {
     border: none;
     .card-img-wrapprer {
@@ -32,6 +38,7 @@
     .card-title {
         height: 4.5rem;
         overflow: hidden;
+
     }
     &:hover {
         .card-title {

@@ -29,7 +29,7 @@
 </template>
 
 <style lang="scss" scoped>
-    @import "@/assets/scss/custom/variables";
+    @import "@/assets/scss/variables";
 
     .card-main {
         .card-main__wrapper {

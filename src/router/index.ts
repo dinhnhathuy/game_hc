@@ -45,6 +45,11 @@ const router = createRouter({
       name: 'videos',
       component: () => import('../views/videos/index.vue')  
     },
+    {
+      path: '/article/:id',
+      name: 'article',
+      component: () => import('../views/article/content.vue'),
+    },
     // user
     {
       path: '/register',
