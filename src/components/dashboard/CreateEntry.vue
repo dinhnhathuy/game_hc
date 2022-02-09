@@ -4,11 +4,11 @@
   </span>
   <div class="entry-head">
     <h2>Create an Entry</h2>
-    <button type="submit">Save</button>
+    <button type="submit" form="createEntryForm">Save</button>
   </div>
 
   <div class="entrybody row">
-    <form class="col-9">
+    <form class="col-9" id="createEntryForm">
       <div class="newentry">
         <div class="info-body row">
           <div class="box-info col-6">
