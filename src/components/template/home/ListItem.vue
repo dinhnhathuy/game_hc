@@ -5,18 +5,19 @@
       {{ item.realeseDate }}
     </div>
     <div class="list-item__image">
-      <img src="https://www.gamespot.com/a/uploads/screen_small/1640/16407182/3927657-pzsmashwindow.jpg" alt="">
+      <img
+        src="https://www.gamespot.com/a/uploads/screen_small/1640/16407182/3927657-pzsmashwindow.jpg"
+      />
     </div>
   </li>
 </template>
 
-<script lang="ts">
-  export default {
-    props: {
-      item: {
-        type: Object,
-        required: true
-      }
-    }
+<script setup lang="ts">
+const props = defineProps({
+  item: {
+    type: Object,
+    required: true
   }
+})
+
 </script>

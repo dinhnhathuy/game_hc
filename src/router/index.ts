@@ -8,42 +8,84 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: {
+        breadcrumb: [{ name: 'Home'}],
+        layout: 'default'
+      }
     },
     {
       path: '/about',
       name: 'about',
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../views/AboutView.vue'),
+      meta: {
+        breadcrumb: [{ name: 'About'}],
+        layout: 'default'
+      }
     },
     {
       path: '/news',
       name: 'news',
-      component: () => import('../views/news/index.vue')  
+      component: () => import('../views/news/index.vue'),
+      meta: {
+        breadcrumb: [{ name: 'News'}],
+        layout: 'default'
+      }
     },
     {
       path: '/gears',
       name: 'gears',
-      component: () => import('../views/gears/index.vue')  
+      component: () => import('../views/gears/index.vue'),
+      meta: {
+        breadcrumb: [{ name: 'Gears'}],
+        layout: 'default'
+      }
     },
     {
       path: '/deals',
       name: 'deals',
-      component: () => import('../views/deals/index.vue')  
+      component: () => import('../views/deals/index.vue'),
+      meta: {
+        breadcrumb: [{ name: 'Deals'}],
+        layout: 'default'
+      }
     },
     {
       path: '/previews',
       name: 'previews',
-      component: () => import('../views/previews/index.vue')  
+      component: () => import('../views/previews/index.vue'),
+      meta: {
+        breadcrumb: [{ name: 'Previews'}],
+        layout: 'default'
+      }
+    },
+    {
+      path: '/previews/games',
+      name: 'previews-games',
+      component: () => import('../views/previews/Games.vue'),
+    },
+    {
+      path: '/previews/entertainments',
+      name: 'previews-entertaiment',
+      component: () => import('../views/previews/Entertainments.vue'),
     },
     {
       path: '/games',
       name: 'games',
-      component: () => import('../views/games/index.vue')  
+      component: () => import('../views/games/index.vue'),
+      meta: {
+        breadcrumb: [{ name: 'Games'}],
+        layout: 'default'
+      }  
     },
     {
       path: '/videos',
       name: 'videos',
-      component: () => import('../views/videos/index.vue')  
+      component: () => import('../views/videos/index.vue') ,
+      meta: {
+        breadcrumb: [{ name: 'Videos'}],
+        layout: 'default'
+      } 
     },
     {
       path: '/article/:id',
@@ -54,17 +96,26 @@ const router = createRouter({
     {
       path: '/register',
       name: 'register',
-      component: () => import('../views/user/Register.vue')
+      component: () => import('../views/user/Register.vue'),
+      meta: {
+        layout: 'user'
+      }
     },
     {
       path: '/sign-in',
       name: 'sign-in',
-      component: () => import('../views/user/SignIn.vue')
+      component: () => import('../views/user/SignIn.vue'),
+      meta: {
+        layout: 'user'
+      }
     },
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: () => import('../views/user/DashBoard.vue')
+      component: () => import('../views/user/DashBoard.vue'),
+      meta: {
+        layout: 'user'
+      }
     },
     // 404
     {

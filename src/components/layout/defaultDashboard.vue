@@ -35,12 +35,6 @@
   </div>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style>
   .layout-dashboard{
     display: flex;

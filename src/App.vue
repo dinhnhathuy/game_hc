@@ -1,22 +1,32 @@
 <template>
-  <div>
-    <TopBar></TopBar>
-    <TheHeader></TheHeader>
-    <main >
-      <router-view v-slot="{ Component }">
-        <transition name="scale">
-          <component class="wrapper" :is="Component" />
-        </transition>
-      </router-view>
-    <TheFooter></TheFooter>
-    </main>
-  </div>
+  <component :is="layout">
+    <router-view v-slot="{ Component }">
+      <transition name="scale">
+        <component class="wrapper" :is="Component" />
+      </transition>
+    </router-view>
+  </component>
 </template>
 
 <script setup lang="ts">
-import TheHeader from "@/components/common/TheHeader.vue";
-import TopBar from "@/components/common/TopBar.vue";
-import TheFooter from "./components/common/TheFooter.vue";
+import defaultLayout from '@/layouts/default.vue'
+import { ref, watch, markRaw } from 'vue';
+import { useRoute } from 'vue-router';
+
+const layout = ref()
+const route = useRoute()
+
+watch(
+  () => route.meta?.layout as string | undefined,
+  async (metaLayout: any) => {
+    try {
+      const component = metaLayout && await import(/* @vite-ignore */ `@/layouts/${metaLayout}.vue`)
+      layout.value = markRaw(component?.default || defaultLayout)
+    } catch (error) {
+      layout.value = markRaw(defaultLayout)
+    }
+  }
+)
 </script>
 
 <style lang="scss">

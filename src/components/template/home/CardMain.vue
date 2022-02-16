@@ -3,7 +3,7 @@
         <div class="row card-main__wrapper g-0 p-4">
             <div class="col-md-8">
                 <div class="card-body">
-                    <h6 class="card-text card-main__label">Card title</h6>
+                    <h6 class="card-text card-main__label">Article</h6>
                     <h5 class="card-title card-main__title">This is a wider card with supporting text below as a natural
                         lead-in to
                         additional content. This content is a little bit longer.</h5>
@@ -50,6 +50,7 @@
 
         &__title {
             font-weight: $font-bold;
+            line-height: 1.5;
         }
 
         .fit-img-wrapper {

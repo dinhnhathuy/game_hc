@@ -44,50 +44,50 @@ export const topRatingGames = [{
     "id": 1,
     "title": "Monster Hunter Rise",
     "platfrom": "Reviewed on NS, PC",
-    "score": "9"
+    "score": 9
 }, {
     "id": 2,
     "title": "Rocket League",
     "platfrom": "Reviewed on PC",
-    "score": "9"
+    "score": 9
 }, {
     "id": 3,
     "title": "The Gunk",
     "platfrom": "Reviewed on XONE",
-    "score": "6"
+    "score": 6
 }, {
     "id": 4,
     "title": "Final Fantasy XIV: Endwalker",
     "platfrom": "Reviewed on PC",
-    "score": "8"
+    "score": 8
 }, {
     "id": 5,
     "title": "Ruined King: A League of Legends Story",
     "platfrom": "Reviewed on PS4",
-    "score": "8"
+    "score": 8
 }, {
     "id": 6,
     "title": "Shovel Knight Pocket Dungeon",
     "platfrom": "Reviewed on NS",
-    "score": "8"
+    "score": 8
 }, {
     "id": 7,
     "title": "Halo Infinite",
     "platfrom": "Reviewed on XBSX",
-    "score": "9"
+    "score": 9
 }, {
     "id": 8,
     "title": "Solar Ash",
     "platfrom": "Reviewed on PC, PS5",
-    "score": "8"
+    "score": 8
 }, {
     "id": 9,
     "title": "Big Brain Academy: Brain vs. Brain",
     "platfrom": "Reviewed on NS",
-    "score": "7"
+    "score": 7
 }, {
     "id": 10,
     "title": "Halo Infinite",
     "platfrom": "Reviewed on XBSX",
-    "score": "8"
+    "score": 8
 }]
