@@ -1,5 +1,5 @@
 <template>
-    <svg viewBox="0 0 36 36" class="circular-chart">
+    <svg viewBox="0 0 36 36" class="circular-chart" :class="{light: isLight}">
         <text x="14" y="23" class="small">{{ percent / 10 }}</text>
         <path
             class="circle"
@@ -16,6 +16,10 @@ const props = defineProps({
     percent: {
         type: Number,
         default: 80
+    },
+    isLight: {
+        type: Boolean,
+        default: false
     }
 })
 </script>
@@ -29,6 +33,11 @@ const props = defineProps({
     max-height: 100px;
     height: $progress-size;
     position: relative;
+    &.light {
+        background: #fff;
+        border-radius: 50%;
+        padding: 3px;
+    }
 }
 
 .circle {

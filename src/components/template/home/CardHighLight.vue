@@ -7,7 +7,7 @@
                 alt="..."
             />
         </div>
-        <div class="card-img-overlay">
+        <div v-if="hasContent" class="card-img-overlay">
             <h5 class="card-title">Card title</h5>
             <p class="card-text line-clamp-2">
                 This is a wider card with supporting text below as a natural lead-in to additional
@@ -17,6 +17,15 @@
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+const props = defineProps({
+    hasContent: {
+        type: Boolean,
+        default: true
+    }
+})
+</script>
 
 <style lang="scss" scoped>
 .high-light-card {

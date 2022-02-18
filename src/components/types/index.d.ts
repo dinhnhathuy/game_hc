@@ -9,3 +9,9 @@ export interface navItemChild {
     name: string,
     to: string,
 }
+
+export interface post {
+    id: number,
+    title: string,
+    realeseDate: string
+}

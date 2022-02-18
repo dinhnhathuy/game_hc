@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
-
-html, body, * {
-    font-family: "Source Sans Pro","Franklin Gothic Medium","Arial Narrow Bold","Helvetica Neue",Arial,sans-serif;
+html,
+body,
+* {
+    font-family: "Source Sans Pro", "Franklin Gothic Medium", "Arial Narrow Bold", "Helvetica Neue", Arial, sans-serif;
 }
 
 #app {
-    font-family: "Source Sans Pro","Franklin Gothic Medium","Arial Narrow Bold","Helvetica Neue",Arial,sans-serif;
+    font-family: "Source Sans Pro", "Franklin Gothic Medium", "Arial Narrow Bold", "Helvetica Neue", Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: $gray-900;
 }
 
 // spacing
@@ -22,7 +28,6 @@ html, body, * {
 .fit-img-wrapper {
     position: relative;
     overflow: hidden;
-
     .fit-img {
         width: 100%;
         height: 100%;
@@ -53,4 +58,24 @@ html, body, * {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.font-light {
+    font-weight: $font-light;
+}
+
+.font-regular {
+    font-weight: $font-regular;
+}
+
+.font-black {
+    font-weight: $font-black;
+}
+
+.font-semibold {
+    font-weight: $font-semibold;
+}
+
+.font-bold {
+    font-weight: $font-bold;
 }

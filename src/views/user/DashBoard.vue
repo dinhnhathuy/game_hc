@@ -4,48 +4,28 @@
       <DefaultDashboard></DefaultDashboard>
     </div>
     <div class="contentDashboard col-9">
-      <component :is="currentComponent" @createEntry="showEntry" @cancelEntry="offEntry"></component>
+      <!-- <component :is="currentComponent" @createEntry="showEntry" @cancelEntry="offEntry"></component> -->
 
-      <!-- <TableDashboard @createEntry="showEntry"></TableDashboard>
-       -->
+      <TableDashboard @createEntry="showEntry"></TableDashboard>
     </div>
   </div>
-
 </template>
 
-<script>
-  import DefaultDashboard from '@/components/layout/defaultDashboard.vue'
-  import TableDashboard from '../../components/dashboard/TableDashboard.vue'
-  import CreateEntry from '../../components/dashboard/CreateEntry.vue'
-  export default {
-    components: {
-      TableDashboard,
-      DefaultDashboard,
-      CreateEntry
-    },
-    data() {
-      return {
-        currentComponent: 'TableDashboard',
-      };
-    },
-    methods: {
-      showEntry() {
+<script setup lang="ts">
+import DefaultDashboard from '@/components/layouts/defaultDashboard.vue'
+import TableDashboard from '../../components/dashboard/TableDashboard.vue'
+import CreateEntry from '../../components/dashboard/CreateEntry.vue'
+import { ref, reactive } from 'vue';
 
-        this.currentComponent = 'CreateEntry'
-        console.log(this);
-      },
-      offEntry() {
+const currentComponent = ref<string>('TableDashboard')
 
-        this.currentComponent = "TableDashboard"
-        console.log(this);
-      },
-    },
-  };
+const showEntry = () => currentComponent.value = "CreateEntry"
+const offEntry = () => currentComponent.value = "TableDashboard"
 </script>
 
 <style>
-  .Dashboard {
-    background-color: rgb(248 249 250);
-    display: flex;
-  }
+.Dashboard {
+  background-color: rgb(248 249 250);
+  display: flex;
+}
 </style>

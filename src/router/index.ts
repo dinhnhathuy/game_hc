@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import NotFound from '../views/404.vue'
+import defaultLayout from '@/components/layouts/default.vue'
+import adminLayout from '@/components/layouts/defaultDashboard.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -11,7 +13,7 @@ const router = createRouter({
       component: HomeView,
       meta: {
         breadcrumb: [{ name: 'Home'}],
-        layout: 'default'
+        layout: defaultLayout
       }
     },
     {
@@ -20,7 +22,7 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue'),
       meta: {
         breadcrumb: [{ name: 'About'}],
-        layout: 'default'
+        layout: defaultLayout
       }
     },
     {
@@ -29,7 +31,7 @@ const router = createRouter({
       component: () => import('../views/news/index.vue'),
       meta: {
         breadcrumb: [{ name: 'News'}],
-        layout: 'default'
+        layout: defaultLayout
       }
     },
     {
@@ -38,7 +40,7 @@ const router = createRouter({
       component: () => import('../views/gears/index.vue'),
       meta: {
         breadcrumb: [{ name: 'Gears'}],
-        layout: 'default'
+        layout: defaultLayout
       }
     },
     {
@@ -47,7 +49,7 @@ const router = createRouter({
       component: () => import('../views/deals/index.vue'),
       meta: {
         breadcrumb: [{ name: 'Deals'}],
-        layout: 'default'
+        layout: defaultLayout
       }
     },
     {
@@ -56,18 +58,22 @@ const router = createRouter({
       component: () => import('../views/previews/index.vue'),
       meta: {
         breadcrumb: [{ name: 'Previews'}],
-        layout: 'default'
-      }
+        layout: defaultLayout
+      },
+      children: [
+        {path: 'games', name: 'previews-games', component: () => import('../views/previews/Games.vue')},
+        {path: 'entertainments', name: 'previews-entertaiment', component: () => import('../views/previews/Entertainments.vue')},
+      ]
     },
-    {
-      path: '/previews/games',
-      name: 'previews-games',
-      component: () => import('../views/previews/Games.vue'),
-    },
-    {
-      path: '/previews/entertainments',
-      name: 'previews-entertaiment',
-      component: () => import('../views/previews/Entertainments.vue'),
+    { 
+      path: '/previews/:id',
+      name: 'preview-content',
+      component: () => import('../views/previews/Content.vue'), 
+      props: true,
+      meta: {
+        breadcrumb: [{ name: 'Previews'}],
+        layout: defaultLayout
+      },
     },
     {
       path: '/games',
@@ -75,7 +81,7 @@ const router = createRouter({
       component: () => import('../views/games/index.vue'),
       meta: {
         breadcrumb: [{ name: 'Games'}],
-        layout: 'default'
+        layout: defaultLayout
       }  
     },
     {
@@ -84,7 +90,7 @@ const router = createRouter({
       component: () => import('../views/videos/index.vue') ,
       meta: {
         breadcrumb: [{ name: 'Videos'}],
-        layout: 'default'
+        layout: defaultLayout
       } 
     },
     {
@@ -98,7 +104,7 @@ const router = createRouter({
       name: 'register',
       component: () => import('../views/user/Register.vue'),
       meta: {
-        layout: 'user'
+        layout: adminLayout
       }
     },
     {
@@ -106,15 +112,15 @@ const router = createRouter({
       name: 'sign-in',
       component: () => import('../views/user/SignIn.vue'),
       meta: {
-        layout: 'user'
+        layout: adminLayout
       }
     },
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: () => import('../views/user/DashBoard.vue'),
+      component: () => import('../views/user/index.vue'),
       meta: {
-        layout: 'user'
+        layout: adminLayout
       }
     },
     // 404

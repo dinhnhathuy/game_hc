@@ -1,5 +1,5 @@
 <template>
-  <component :is="layout">
+  <component :is="$route.meta.layout || 'div'">
     <router-view v-slot="{ Component }">
       <transition name="scale">
         <component class="wrapper" :is="Component" />
@@ -7,27 +7,6 @@
     </router-view>
   </component>
 </template>
-
-<script setup lang="ts">
-import defaultLayout from '@/layouts/default.vue'
-import { ref, watch, markRaw } from 'vue';
-import { useRoute } from 'vue-router';
-
-const layout = ref()
-const route = useRoute()
-
-watch(
-  () => route.meta?.layout as string | undefined,
-  async (metaLayout: any) => {
-    try {
-      const component = metaLayout && await import(/* @vite-ignore */ `@/layouts/${metaLayout}.vue`)
-      layout.value = markRaw(component?.default || defaultLayout)
-    } catch (error) {
-      layout.value = markRaw(defaultLayout)
-    }
-  }
-)
-</script>
 
 <style lang="scss">
 @import "@/assets/scss/base.scss";
