@@ -6,7 +6,7 @@
         :data-ratio="ratio"
         :data-width="imageWidth"
         data-embed-type="image"
-        :style="{ width: imageWidth + 'px' }"
+        :style="{ width: imageWidth + 'px', position: 'relative' }"
     >
         <div class="image-wrapper fit-img-wrapper" :style="{ 'padding-bottom': ratio * 100 + '%' }">
             <img
@@ -18,6 +18,8 @@
                 class="fit-img"
             />
         </div>
+        <div class="next-icon" @click="$emit('next-image')"><span>></span></div>
+        <div class="previos-icon" @click="$emit('previos-image')"><span>&lt</span></div>
         <figcaption>{{ imageCaption }}</figcaption>
     </figure>
 </template>
@@ -41,8 +43,8 @@ const props = defineProps({
         default: '(max-width: 600px) 100vw, 600px'
     },
     imageWidth: {
-        type: Number,
-        default: 600
+        type: [Number, String],
+        default: 'auto'
     },
     ratio: {
         type: Number,
@@ -50,3 +52,26 @@ const props = defineProps({
     }
 })
 </script>
+
+<style lang="scss">
+.next-icon, .previos-icon {
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    span {
+        color: #fff;
+        font-weight: 500;
+    }
+}
+.next-icon {
+    right: 0;
+}
+.previos-icon {
+    left: 0;
+}
+</style>

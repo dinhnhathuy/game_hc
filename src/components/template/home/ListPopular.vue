@@ -2,9 +2,7 @@
   <div class="list">
     <div class="row">
       <div class="col-8 list-title">
-        <h5>
-          <slot>Top Upcoming Games</slot>
-        </h5>
+        <h5>Top Upcoming Games</h5>
       </div>
       <div class="col-4">
         <div class="dropdown">
@@ -19,12 +17,11 @@
       </div>
     </div>
     <div>
-      <ol class="list-group list-group-numbered">
-        <li v-for="(item, index) in items" :key="index"
-          class="list-group-item list-item-main d-flex justify-content-between align-items-start">
+      <ol class="list-group">
+        <li class="list-group-item list-item-main d-flex justify-content-between align-items-start">
           <div class="ms-2 me-auto max-w__60">
-            <div class="fw-bold">{{ item.title }}</div>
-            {{ item.realeseDate }}
+            <div class="fw-bold">{{ content.title }}</div>
+            {{ content.realeseDate }}
           </div>
           <div class="list-item__image">
             <img src="https://www.gamespot.com/a/uploads/screen_small/1640/16407182/3927657-pzsmashwindow.jpg" />
@@ -40,20 +37,14 @@
 
 <script setup lang="ts">
   import {
-    game
-  } from "@/components/types/index";
-  import {
-    PropType
-  } from "vue";
-  import {
     appDetails
   } from '@/stores/modules/app'
-
-  const appInfo = appDetails()
   const props = defineProps({
-    items: {
-      type: Array as PropType < game[] > ,
+    content: {
+      type: Object,
       required: true
     }
   })
+
+  const appInfo = appDetails()
 </script>

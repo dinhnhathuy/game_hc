@@ -97,6 +97,9 @@ const router = createRouter({
       path: '/article/:id',
       name: 'article',
       component: () => import('../views/article/content.vue'),
+      meta: {
+        layout: defaultLayout
+      } 
     },
     // user
     {

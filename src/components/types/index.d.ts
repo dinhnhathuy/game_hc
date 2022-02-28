@@ -15,3 +15,11 @@ export interface post {
     title: string,
     realeseDate: string
 }
+
+export interface game {
+    id: number,
+    title: string,
+    realeseDate?: string,
+    platform?: string;
+    score?: number | string;
+}

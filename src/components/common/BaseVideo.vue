@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="d-flex justify-content-center mb-3">
         <div
             data-embed-type="video"
             :data-src="`https://www.youtube.com/watch?v=${videoId}`"

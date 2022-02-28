@@ -10,6 +10,7 @@
 
 <style lang="scss">
 @import "@/assets/scss/base.scss";
+
 .wrapper {
   width: 100%;
   min-height: 100vh;
